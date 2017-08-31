@@ -3,10 +3,10 @@ var boom = require('boom');
 var bcrypt = require('bcrypt');
 
 exports.createUser = {
-    // auth: {
-    //   mode:'try',
-    //   strategy:'session'
-    // },
+    auth: {
+      mode:'try',
+      strategy:'session'
+    },
     handler: function(request, reply) {
        bcrypt.hash(request.payload.password, 10, function(err, hash){
           if(err)

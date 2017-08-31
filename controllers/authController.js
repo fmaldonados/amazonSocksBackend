@@ -36,10 +36,10 @@ exports.login = {
     }
 };
 exports.logout = {
-    // auth: {
-    //   mode:'required',
-    //   strategy:'session'
-    // },
+    auth: {
+      mode:'required',
+      strategy:'session'
+    },
     handler: function(request, reply) {
       request.cookieAuth.clear();
       return reply('Logout Successful!');
